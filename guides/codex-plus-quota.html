@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Codex 用 Plus 够不够：额度与限流实测</title>
+<meta name="description" content="Codex 用 Plus 够不够？本文给出可复现的自测方法：记录撞限流的时间点与任务类型，判断 Plus 档在短改、中等重构、长任务三种场景下的真实余量，并给出「升一档还是改工作流」的判断标准与常见误区。">
+<link rel="canonical" href="https://cocos666a.github.io/tibo-price/guides/codex-plus-quota.html">
+<style>
+:root{color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:#0E1116;color:#E6E8EB;font-size:17px;line-height:1.75;
+font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif}
+.wrap{max-width:720px;margin:0 auto;padding:22px 18px 48px}
+.crumb{font-size:14px;line-height:1.6;color:#8A929C;margin:0 0 16px}
+.crumb a{color:#8A929C;text-decoration:none;border-bottom:1px solid #262C34}
+.crumb a:hover{color:#FF7A45;border-bottom-color:#FF7A45}
+h1{font-size:25px;line-height:1.45;margin:0 0 16px;color:#FFFFFF;letter-spacing:.2px}
+h2{font-size:19px;line-height:1.5;margin:30px 0 12px;color:#FFFFFF;
+border-left:3px solid #FF7A45;padding-left:10px}
+h3{font-size:17px;line-height:1.6;margin:20px 0 6px;color:#FFC9AE}
+p{margin:0 0 14px}
+ul,ol{margin:0 0 14px;padding-left:22px}
+li{margin:0 0 8px}
+a{color:#FF7A45;text-decoration:none}
+a:hover{text-decoration:underline}
+strong{color:#FFFFFF}
+.lead{background:#171B21;border:1px solid #262C34;border-left:3px solid #FF7A45;
+border-radius:8px;padding:14px 16px;margin:0 0 22px}
+.card{background:#171B21;border:1px solid #262C34;border-radius:8px;padding:14px 16px;margin:0 0 16px}
+.risk{background:#1A1410;border:1px solid #4A2A18;border-radius:8px;padding:2px 16px 14px;margin:26px 0 18px}
+.risk h2{border-left:0;padding-left:0;font-size:18px;margin:20px 0 10px;color:#FFB18F}
+.risk ul{padding-left:20px}
+table{border-collapse:collapse;margin:10px 0 18px;font-size:15px;line-height:1.6}
+th,td{border:1px solid #262C34;padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#171B21;color:#FFFFFF;font-weight:600}
+.more{margin:34px 0 0}
+.more ul{list-style:none;padding:0;margin:0}
+.more li{background:#171B21;border:1px solid #262C34;border-radius:8px;
+padding:10px 14px;margin:0 0 10px;font-size:16px;line-height:1.55}
+.cta{display:block;background:#FF7A45;color:#0E1116;text-align:center;text-decoration:none;
+font-weight:700;padding:14px 18px;border-radius:8px;margin:30px 0 14px}
+.cta:hover{text-decoration:none;opacity:.92}
+footer{font-size:13px;line-height:1.7;color:#8A929C}
+footer p{margin:0 0 8px}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "name": "Codex 用 Plus 够不够：额度与限流实测", "url": "https://cocos666a.github.io/tibo-price/guides/codex-plus-quota.html", "mainEntity": [{"@type": "Question", "name": "Plus 档每天能用 Codex 多久？", "acceptedAnswer": {"@type": "Answer", "text": "没有固定答案，取决于任务类型与上下文大小。短改类任务一天十来次通常不吃力；长任务连续跑两三个小时就容易撞到窗口。用两周自测数据来判断，比看别人的数字准。"}}, {"@type": "Question", "name": "撞到限流之后要等多久？", "acceptedAnswer": {"@type": "Answer", "text": "Codex 的用量按滚动窗口释放，短窗口恢复快、长周期上限恢复慢。着急的时候换别的工具补位，比坐着等更划算。"}}, {"@type": "Question", "name": "升一档能解决问题吗？", "acceptedAnswer": {"@type": "Answer", "text": "能延后撞墙时间，但如果你的用法在浪费额度（反复重读大文件、并行开一堆任务），升档只是把问题往后推。先把工作流压一遍，再考虑升档。"}}, {"@type": "Question", "name": "Codex 额度和聊天额度是同一个池子吗？", "acceptedAnswer": {"@type": "Answer", "text": "两者都属于账号的用量体系，但不是同一个计数器。实际扣减规则以官方说明为准，本文不写死细节，因为规则调整过多次。"}}, {"@type": "Question", "name": "多人共用一个号跑 Codex 可行吗？", "acceptedAnswer": {"@type": "Answer", "text": "不建议。多人同时跑会更快撞到窗口，而且账号要承受多设备多地登录。真需要多人协作，应该按人分账号，而不是把一个号切给几个人用。"}}]}</script>
+</head>
+<body>
+<div class="wrap">
+<nav class="crumb"><a href="../index.html">首页</a> › <a href="index.html">指南</a> › <span>Codex 用 Plus 够不够：额度与限流实测</span></nav>
+<main>
+<h1>Codex 用 Plus 够不够：额度与限流实测</h1>
+<div class="lead"><p><strong>一句话结论：</strong>Plus 够不够，取决于你的任务是「短平快」还是「长时间连续跑」。短改、查错、写一两百行，Plus 通常够；一次跑半小时以上的长任务、或者连续几小时开着 Codex 改大仓库，Plus 会先撞到窗口上限。判断方法只有一个：自己记两周数据。</p></div>
+
+<h2>先把限流的机制说清楚</h2>
+<p>Codex 的用量按滚动窗口计算：一个短周期窗口加一个更长的周期上限。撞到之后通常不是直接报错停掉，而是排队、降速，或者提示稍后再试。这意味着一件事：你不会「突然用不了」，而是「越来越慢」。</p>
+<p>具体数值官方会调整，本文不写死。档位与权益以官方定价页为准：<a href="https://chatgpt.com/pricing/" rel="nofollow noopener" target="_blank">chatgpt.com/pricing</a>。</p>
+
+<h2>三种典型场景，Plus 的余量不一样</h2>
+<table>
+<thead><tr><th>场景</th><th>一次任务量级</th><th>Plus 档表现</th><th>建议</th></tr></thead>
+<tbody>
+<tr><td>短改：单文件修 bug、加一个小功能</td><td>几分钟</td><td>基本不撞，一天十来次也不吃力</td><td>留在基础档</td></tr>
+<tr><td>中等：跨三五个文件重构、跑测试</td><td>十几到几十分钟</td><td>一天三到五次之后开始排队</td><td>把任务拆小、错峰</td></tr>
+<tr><td>长任务：大仓库、连续跑半天</td><td>小时级</td><td>会稳定撞到窗口上限</td><td>升档，或改成批处理</td></tr>
+</tbody>
+</table>
+
+<h2>自测方法（这一步别省）</h2>
+<p>准备一个表，每次用 Codex 记四列：开始时间、任务类型、结束时间、有没有出现排队或降速提示。连续记两周，你会得到两个关键数字——单日可用时长、以及你撞限流的时间点。</p>
+<p>这两个数字比任何「某某档能跑多少」的帖子都可靠，因为它是你自己的任务结构测出来的。别人的用量结构跟你不一样，照抄没有意义。</p>
+
+<h2>撞到限流的三种表现</h2>
+<h3>排队：任务提交后迟迟不动</h3>
+<p>这是最常见的表现。不要在这时候连着提交新任务，堆起来的请求会一起排队，反而把整个下午堵住。停手，把不着急的任务挪到低峰时段。</p>
+<h3>降速：还能跑，但每次改得很小</h3>
+<p>降速阶段的产出质量会明显下降——它倾向于做小改动、不敢大重构。这时候继续逼它，等于在用低质量的输出消耗额度。</p>
+<h3>提示稍后再试 / 明确的用量上限提示</h3>
+<p>到这一步就是彻底撞墙了。记下时间点，这是你判断该不该升档的关键数据；同时说明一件事：当天剩下的时间要靠别的工具补位。</p>
+
+<h2>常见误判与坑</h2>
+<h3>并行开多个任务，以为总量不变</h3>
+<p>并行不让总量变多，只会让你更早撞到窗口上限，而且每个任务的上下文都更贵。除非任务之间确实独立，否则串行执行反而更快完成。</p>
+<h3>把整份仓库反复塞进上下文</h3>
+<p>每次让它重读一遍大文件，都是实打实的用量。用固定入口文件、用索引、用摘要，把上下文压下来，比升档有效。</p>
+<h3>用 Codex 当批量处理机</h3>
+<p>批量改名、批量翻译这种确定性任务，用脚本更省。把这类工作塞给模型，等于用最贵的方式做机械活。</p>
+<h3>降速之后继续追问，期待它变快</h3>
+<p>不会变快。降速阶段更合理的做法是收拾现场、写清上下文，等窗口恢复再一次性推完。</p>
+<h3>只看「每天能用几次」，不看单次成本</h3>
+<p>一次任务用掉多少，取决于上下文多大、跑了多少轮工具调用。同一个档位，有人一次任务顶别人十次，差别在执行方式上。</p>
+
+<div class="risk">
+<h2>主动说清风险</h2>
+<ul>
+<li>限流的具体数值随时会变，任何写死「每天 X 次」的说法都会过期。本文只给方法，不给承诺。</li>
+<li>升档解决的是总量，不解决浪费。如果用法本身在烧额度，升一档只是把撞墙时间往后推几天。</li>
+<li>账号层面：多地登录、多设备并发会引入与额度无关的风险，而这部分风险无法归因，也与买哪档无关。</li>
+<li>价格随店铺调整，以实际下单页为准；本页不列具体售价，避免你拿旧数字对标今天。</li>
+</ul>
+</div>
+<section>
+<h2>常见问题</h2>
+<h3>Plus 档每天能用 Codex 多久？</h3>
+<p>没有固定答案，取决于任务类型与上下文大小。短改类任务一天十来次通常不吃力；长任务连续跑两三个小时就容易撞到窗口。用两周自测数据来判断，比看别人的数字准。</p>
+<h3>撞到限流之后要等多久？</h3>
+<p>Codex 的用量按滚动窗口释放，短窗口恢复快、长周期上限恢复慢。着急的时候换别的工具补位，比坐着等更划算。</p>
+<h3>升一档能解决问题吗？</h3>
+<p>能延后撞墙时间，但如果你的用法在浪费额度（反复重读大文件、并行开一堆任务），升档只是把问题往后推。先把工作流压一遍，再考虑升档。</p>
+<h3>Codex 额度和聊天额度是同一个池子吗？</h3>
+<p>两者都属于账号的用量体系，但不是同一个计数器。实际扣减规则以官方说明为准，本文不写死细节，因为规则调整过多次。</p>
+<h3>多人共用一个号跑 Codex 可行吗？</h3>
+<p>不建议。多人同时跑会更快撞到窗口，而且账号要承受多设备多地登录。真需要多人协作，应该按人分账号，而不是把一个号切给几个人用。</p>
+</section>
+<section class="more">
+<h2>其他指南</h2>
+<ul>
+<li><a href="pro-5x-20x-50x.html">ChatGPT Pro 5x / 20x / 50x 有什么区别，该买哪档</a></li>
+<li><a href="chatgpt-plus-guide.html">ChatGPT Plus 国内怎么充值（2026 版）：四条路逐条拆</a></li>
+<li><a href="subscription-dropped.html">ChatGPT Plus 掉订阅怎么办：先做这 5 步</a></li>
+<li><a href="price-conversion-table.html">2026 ChatGPT 各档价格换算表（含汇率与手续费）</a></li>
+<li><a href="plus-vs-claude-pro.html">ChatGPT Plus 和 Claude Pro 怎么选</a></li>
+</ul>
+</section>
+</main>
+<footer>
+<p>价格随店铺调整，以实际下单页为准；本页为经验整理，不构成任何承诺。</p>
+<a class="cta" href="https://prodclub.xyz/r/Y5WVQ9?utm_source=pages&utm_medium=guide&utm_campaign=codex-plus-quota" rel="nofollow noopener">查看在售与价格</a>
+<p>订阅、支付与退款政策以官方页面和实际下单页为准。</p>
+</footer>
+</div>
+</body>
+</html>

@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://cocos666a.github.io/tibo-price/guides/sitemap.xml

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ChatGPT Plus 和 Claude Pro 怎么选</title>
+<meta name="description" content="两者都在 20 美元/月这一档，选哪个看工作类型而不是看榜单：日常问答与多模态、长文处理与代码重构、写作风格、生态集成各有侧重。给出按任务类型的选择顺序、同时订两份的代价、四个常见误判，以及什么时候只订一份就够。">
+<link rel="canonical" href="https://cocos666a.github.io/tibo-price/guides/plus-vs-claude-pro.html">
+<style>
+:root{color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:#0E1116;color:#E6E8EB;font-size:17px;line-height:1.75;
+font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif}
+.wrap{max-width:720px;margin:0 auto;padding:22px 18px 48px}
+.crumb{font-size:14px;line-height:1.6;color:#8A929C;margin:0 0 16px}
+.crumb a{color:#8A929C;text-decoration:none;border-bottom:1px solid #262C34}
+.crumb a:hover{color:#FF7A45;border-bottom-color:#FF7A45}
+h1{font-size:25px;line-height:1.45;margin:0 0 16px;color:#FFFFFF;letter-spacing:.2px}
+h2{font-size:19px;line-height:1.5;margin:30px 0 12px;color:#FFFFFF;
+border-left:3px solid #FF7A45;padding-left:10px}
+h3{font-size:17px;line-height:1.6;margin:20px 0 6px;color:#FFC9AE}
+p{margin:0 0 14px}
+ul,ol{margin:0 0 14px;padding-left:22px}
+li{margin:0 0 8px}
+a{color:#FF7A45;text-decoration:none}
+a:hover{text-decoration:underline}
+strong{color:#FFFFFF}
+.lead{background:#171B21;border:1px solid #262C34;border-left:3px solid #FF7A45;
+border-radius:8px;padding:14px 16px;margin:0 0 22px}
+.card{background:#171B21;border:1px solid #262C34;border-radius:8px;padding:14px 16px;margin:0 0 16px}
+.risk{background:#1A1410;border:1px solid #4A2A18;border-radius:8px;padding:2px 16px 14px;margin:26px 0 18px}
+.risk h2{border-left:0;padding-left:0;font-size:18px;margin:20px 0 10px;color:#FFB18F}
+.risk ul{padding-left:20px}
+table{border-collapse:collapse;margin:10px 0 18px;font-size:15px;line-height:1.6}
+th,td{border:1px solid #262C34;padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#171B21;color:#FFFFFF;font-weight:600}
+.more{margin:34px 0 0}
+.more ul{list-style:none;padding:0;margin:0}
+.more li{background:#171B21;border:1px solid #262C34;border-radius:8px;
+padding:10px 14px;margin:0 0 10px;font-size:16px;line-height:1.55}
+.cta{display:block;background:#FF7A45;color:#0E1116;text-align:center;text-decoration:none;
+font-weight:700;padding:14px 18px;border-radius:8px;margin:30px 0 14px}
+.cta:hover{text-decoration:none;opacity:.92}
+footer{font-size:13px;line-height:1.7;color:#8A929C}
+footer p{margin:0 0 8px}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "name": "ChatGPT Plus 和 Claude Pro 怎么选", "url": "https://cocos666a.github.io/tibo-price/guides/plus-vs-claude-pro.html", "mainEntity": [{"@type": "Question", "name": "两个价格差不多，怎么决定？", "acceptedAnswer": {"@type": "Answer", "text": "数一下你上周实际做的事：图片、语音、日常问答多就选 ChatGPT；长文档、代码重构、结构化写作多就选 Claude Pro。按任务结构选比按评测选稳。"}}, {"@type": "Question", "name": "能不能两个都订？", "acceptedAnswer": {"@type": "Answer", "text": "可以，但先订一个月实测。真正常用的是其中一个，另一个很快就会变成每月白付的固定支出。"}}, {"@type": "Question", "name": "只订一个够用吗？", "acceptedAnswer": {"@type": "Answer", "text": "多数人够了。真不够的信号是「同一类任务每周都会遇到明显做不动的时候」，这时先考虑升档，再考虑换一家。"}}, {"@type": "Question", "name": "订阅能用来给自己的程序调用吗？", "acceptedAnswer": {"@type": "Answer", "text": "不能。订阅是给人用的产品额度，程序调用要走接口计费，两者不是一回事，价格与限制都不同。"}}, {"@type": "Question", "name": "国内付款哪家更方便？", "acceptedAnswer": {"@type": "Answer", "text": "两家的支付要求类似，都需要境外卡或替代通道。先解决支付这条路，再比功能，否则选了也用不上。"}}]}</script>
+</head>
+<body>
+<div class="wrap">
+<nav class="crumb"><a href="../index.html">首页</a> › <a href="index.html">指南</a> › <span>ChatGPT Plus 和 Claude Pro 怎么选</span></nav>
+<main>
+<h1>ChatGPT Plus 和 Claude Pro 怎么选</h1>
+<div class="lead"><p><strong>一句话结论：</strong>两者都在 20 美元/月这一档，差别不在「谁更强」，在「你的活更像哪一类」。日常问答、图片、语音、多模态交互为主，选 ChatGPT；长文档处理、代码重构、结构化写作与项目资料整理为主，选 Claude Pro。两份都要，就先订一个月实测，别一次买年付。</p></div>
+
+<h2>同价不同侧重</h2>
+<table>
+<thead><tr><th>维度</th><th>ChatGPT Plus</th><th>Claude Pro</th></tr></thead>
+<tbody>
+<tr><td>价格档位</td><td>20 美元/月这一档</td><td>同档（年付通常有折扣）</td></tr>
+<tr><td>强项方向</td><td>多模态（图片、语音）、生态与工具集成、面向普通用户的功能面</td><td>长上下文阅读、代码理解与重构、结构化长文写作</td></tr>
+<tr><td>编码辅助</td><td>有独立的编码代理产品线，偏「跑任务」</td><td>偏「读代码、改代码、解释代码」，对话式更强</td></tr>
+<tr><td>中文表现</td><td>通用场景稳定</td><td>长文与文档类中文处理体验较好</td></tr>
+<tr><td>限额策略</td><td>按档位分层的用量窗口</td><td>按档位分层的用量窗口</td></tr>
+<tr><td>适合谁</td><td>日常问答、内容创作、图片相关的活</td><td>研发、文档密集型工作、长篇写作</td></tr>
+</tbody>
+</table>
+<p>两边的定价与权益都会调整，具体档位以官方页面为准：<a href="https://chatgpt.com/pricing/" rel="nofollow noopener" target="_blank">chatgpt.com/pricing</a>。</p>
+
+<h2>按任务类型选，不按榜单选</h2>
+<p>先数一数你上周实际用 AI 做了什么，把任务归成四类：问答查资料、写东西、改代码、处理图片或语音。哪一类占比高，就按那一类去选。</p>
+<p>榜单排名变化很快，而且评测任务与你的任务往往不是一回事。按自己的任务结构选，三个月后也不会后悔。</p>
+
+<h2>什么时候值得两个都订</h2>
+<p>两种情况：你的工作里「写代码」和「写文档」各占一半，两边都要用；或者你正在做的项目需要交叉验证（同一个问题两边问，比较结论）。</p>
+<p>代价是每月多一份固定支出，而且两份都要面对各自的限流。两个都用得很浅的话，把钱集中在一份、升一档，通常更划算。</p>
+
+<h2>常见误判与坑</h2>
+<h3>把订阅当成 API 额度</h3>
+<p>订阅是给人用的产品额度，不是给程序调用的接口额度。想接进自己的程序里跑，是另一套计费体系，价格与限制都不同。</p>
+<h3>以为买了就无限用</h3>
+<p>两边都有窗口和上限。重度连续使用一样会撞到限制，只是撞得晚一些。</p>
+<h3>同时订了两个，忘了取消其中一个</h3>
+<p>按月扣费的东西最容易忘记。订的时候就在日历上记一条「下月这个时候复核一次」，比事后找退款省事。</p>
+<h3>按「哪个回答更像人」来选</h3>
+<p>风格偏好主观且不稳定，版本一更新就变。选型依据应该是任务完成率与返工率，不是某一次对话的观感。</p>
+<h3>忽略支付通道这道坎</h3>
+<p>两家的支付要求类似，都需要境外卡或替代通道。国内用户选哪家，先看支付这条路能不能走通，再看功能。</p>
+
+<div class="risk">
+<h2>主动说清风险</h2>
+<ul>
+<li>两家的能力评测带主观性，且随版本快速变化。本文只给按任务类型的判断框架，不给「哪个更好」的结论。</li>
+<li>价格与档位会调整，本文不写死任何一方的具体人民币价；实际以官方页面与实际下单页为准。</li>
+<li>同时订两份意味着两份限流、两次支付、两套售后。管理成本是真实的，别只看功能表。</li>
+<li>不管选哪家，封号与掉订阅的风险结构是相似的：一人一号、不在开通期间跨地区切网络、不用来源不明的支付方式，这三条对两家都适用。</li>
+</ul>
+</div>
+<section>
+<h2>常见问题</h2>
+<h3>两个价格差不多，怎么决定？</h3>
+<p>数一下你上周实际做的事：图片、语音、日常问答多就选 ChatGPT；长文档、代码重构、结构化写作多就选 Claude Pro。按任务结构选比按评测选稳。</p>
+<h3>能不能两个都订？</h3>
+<p>可以，但先订一个月实测。真正常用的是其中一个，另一个很快就会变成每月白付的固定支出。</p>
+<h3>只订一个够用吗？</h3>
+<p>多数人够了。真不够的信号是「同一类任务每周都会遇到明显做不动的时候」，这时先考虑升档，再考虑换一家。</p>
+<h3>订阅能用来给自己的程序调用吗？</h3>
+<p>不能。订阅是给人用的产品额度，程序调用要走接口计费，两者不是一回事，价格与限制都不同。</p>
+<h3>国内付款哪家更方便？</h3>
+<p>两家的支付要求类似，都需要境外卡或替代通道。先解决支付这条路，再比功能，否则选了也用不上。</p>
+</section>
+<section class="more">
+<h2>其他指南</h2>
+<ul>
+<li><a href="chatgpt-plus-guide.html">ChatGPT Plus 国内怎么充值（2026 版）：四条路逐条拆</a></li>
+<li><a href="pro-5x-20x-50x.html">ChatGPT Pro 5x / 20x / 50x 有什么区别，该买哪档</a></li>
+<li><a href="codex-plus-quota.html">Codex 用 Plus 够不够：额度与限流实测</a></li>
+<li><a href="price-conversion-table.html">2026 ChatGPT 各档价格换算表（含汇率与手续费）</a></li>
+<li><a href="no-foreign-card.html">没有国外银行卡怎么给 ChatGPT 升级 Plus</a></li>
+</ul>
+</section>
+</main>
+<footer>
+<p>价格随店铺调整，以实际下单页为准；本页为经验整理，不构成任何承诺。</p>
+<a class="cta" href="https://prodclub.xyz/r/Y5WVQ9?utm_source=pages&utm_medium=guide&utm_campaign=plus-vs-claude-pro" rel="nofollow noopener">查看在售与价格</a>
+<p>订阅、支付与退款政策以官方页面和实际下单页为准。</p>
+</footer>
+</div>
+</body>
+</html>
