@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ChatGPT 充值卡被拒：10 个报错对照表</title>
+<meta name="description" content="ChatGPT 充值卡被拒别急着重复提交。本文按支付页面常见的 10 个报错原文逐条对照：中文含义、真实原因、该找谁处理，并按「重试有用」和「重试只会加重账号标记」分成两组，另附发卡行侧的三项前置检查与三个高频坑。">
+<link rel="canonical" href="https://cocos666a.github.io/tibo-price/guides/card-declined-errors.html">
+<style>
+:root{color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:#0E1116;color:#E6E8EB;font-size:17px;line-height:1.75;
+font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif}
+.wrap{max-width:720px;margin:0 auto;padding:22px 18px 48px}
+.crumb{font-size:14px;line-height:1.6;color:#8A929C;margin:0 0 16px}
+.crumb a{color:#8A929C;text-decoration:none;border-bottom:1px solid #262C34}
+.crumb a:hover{color:#FF7A45;border-bottom-color:#FF7A45}
+h1{font-size:25px;line-height:1.45;margin:0 0 16px;color:#FFFFFF;letter-spacing:.2px}
+h2{font-size:19px;line-height:1.5;margin:30px 0 12px;color:#FFFFFF;
+border-left:3px solid #FF7A45;padding-left:10px}
+h3{font-size:17px;line-height:1.6;margin:20px 0 6px;color:#FFC9AE}
+p{margin:0 0 14px}
+ul,ol{margin:0 0 14px;padding-left:22px}
+li{margin:0 0 8px}
+a{color:#FF7A45;text-decoration:none}
+a:hover{text-decoration:underline}
+strong{color:#FFFFFF}
+.lead{background:#171B21;border:1px solid #262C34;border-left:3px solid #FF7A45;
+border-radius:8px;padding:14px 16px;margin:0 0 22px}
+.card{background:#171B21;border:1px solid #262C34;border-radius:8px;padding:14px 16px;margin:0 0 16px}
+.risk{background:#1A1410;border:1px solid #4A2A18;border-radius:8px;padding:2px 16px 14px;margin:26px 0 18px}
+.risk h2{border-left:0;padding-left:0;font-size:18px;margin:20px 0 10px;color:#FFB18F}
+.risk ul{padding-left:20px}
+table{border-collapse:collapse;margin:10px 0 18px;font-size:15px;line-height:1.6}
+th,td{border:1px solid #262C34;padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#171B21;color:#FFFFFF;font-weight:600}
+.more{margin:34px 0 0}
+.more ul{list-style:none;padding:0;margin:0}
+.more li{background:#171B21;border:1px solid #262C34;border-radius:8px;
+padding:10px 14px;margin:0 0 10px;font-size:16px;line-height:1.55}
+.cta{display:block;background:#FF7A45;color:#0E1116;text-align:center;text-decoration:none;
+font-weight:700;padding:14px 18px;border-radius:8px;margin:30px 0 14px}
+.cta:hover{text-decoration:none;opacity:.92}
+footer{font-size:13px;line-height:1.7;color:#8A929C}
+footer p{margin:0 0 8px}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "name": "ChatGPT 充值卡被拒：10 个报错对照表", "url": "https://cocos666a.github.io/tibo-price/guides/card-declined-errors.html", "mainEntity": [{"@type": "Question", "name": "被拒之后要等多久才能再试？", "acceptedAnswer": {"@type": "Answer", "text": "如果是权限或信息问题（第 1、5、6、8 类），改完就可以试；如果是风控或处理错误（第 2、7 类），建议隔一到两个小时；如果真的撞上风险判定，等一天更稳。不要一小时内连续刷。"}}, {"@type": "Question", "name": "银行说没扣款，为什么页面说被拒？", "acceptedAnswer": {"@type": "Answer", "text": "说明请求到了发卡行但被拦下，或者根本没出通道。看发卡行 App 有没有预授权记录就能区分：有记录是被拦，没记录是没出通道。"}}, {"@type": "Question", "name": "国内双币卡到底能不能用？", "acceptedAnswer": {"@type": "Answer", "text": "有一部分能用，但被拒的比例不低，尤其是新卡和默认关闭境外线上交易的卡。先开权限、核对地址，试一到两次；不行就换通道，别在同一个卡上死磕。"}}, {"@type": "Question", "name": "虚拟卡被拒是不是这张卡废了？", "acceptedAnswer": {"@type": "Answer", "text": "不一定。可能是这个卡段被通道限制，换卡段就可能过；也可能是这张卡没开订阅类交易。同一个卡段反复失败，就换一档。"}}, {"@type": "Question", "name": "重试太多次会不会影响账号？", "acceptedAnswer": {"@type": "Answer", "text": "会提高风险评分，表现是后面更难支付、甚至需要额外验证。这是「越急越办不成」的典型场景，停下等一段时间反而是最优解。"}}]}</script>
+</head>
+<body>
+<div class="wrap">
+<nav class="crumb"><a href="../index.html">首页</a> › <a href="index.html">指南</a> › <span>ChatGPT 充值卡被拒：10 个报错对照表</span></nav>
+<main>
+<h1>ChatGPT 充值卡被拒：10 个报错对照表</h1>
+<div class="lead"><p><strong>一句话结论：</strong>被拒先读报错原文，再决定动作。发卡行类的拒绝重试有用，风控类和处理中类的拒绝重试只会加重标记。十条对照表按「重试有用 / 重试无用」分成两组，照着查比连着刷十次强。</p></div>
+
+<h2>先分清两类拒绝</h2>
+<p>支付被拒只有两种性质：一种是「这笔交易根本没到对方手里」，由发卡行或支付通道拦下；另一种是「到了但被判定为风险交易」。前者换个姿势就可能过，后者换姿势没用，得改环境或者换卡。</p>
+<p>官方定价 20 美元/月，按 2026-11-06 汇率口径（1 USD ≈ 6.685 CNY）约 133.7 元，加 1%–3% 货币转换费约 135–138 元。官方页面：<a href="https://chatgpt.com/pricing/" rel="nofollow noopener" target="_blank">chatgpt.com/pricing</a>。</p>
+
+<h2>10 个报错对照表</h2>
+<table>
+<thead><tr><th>#</th><th>报错原文（关键片段）</th><th>中文含义</th><th>真实原因</th><th>该怎么办</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Your card was declined</td><td>卡被拒绝</td><td>发卡行侧拦截，通常是境外线上交易权限没开</td><td>开权限、核对账单地址，再试一次</td></tr>
+<tr><td>2</td><td>Do not honor</td><td>发卡行不授权</td><td>泛风控拒绝，发卡行不给具体理由</td><td>打电话问发卡行；问不出就换卡</td></tr>
+<tr><td>3</td><td>Insufficient funds</td><td>余额或额度不足</td><td>真的不够，或可用额度被其它交易占用</td><td>充值或换卡</td></tr>
+<tr><td>4</td><td>Expired card</td><td>卡已过期</td><td>有效期填错或卡片确实过期</td><td>核对有效期；真过期就换卡</td></tr>
+<tr><td>5</td><td>Incorrect CVC</td><td>安全码错误</td><td>背面三位数或正面四位数填反</td><td>重填，注意卡种不同位数不同</td></tr>
+<tr><td>6</td><td>Incorrect number</td><td>卡号无效</td><td>卡号错位、多空格、或卡本身不支持</td><td>重填卡号，注意不要带空格</td></tr>
+<tr><td>7</td><td>Processing error</td><td>处理错误</td><td>通道临时故障，不是你的问题</td><td>隔几分钟重试一次，不要连刷</td></tr>
+<tr><td>8</td><td>Transaction not allowed</td><td>该交易类型被禁</td><td>卡默认关闭订阅类或跨境线上交易</td><td>去发卡行或卡平台后台开对应权限</td></tr>
+<tr><td>9</td><td>Authentication required / 3DS 失败</td><td>需要额外验证</td><td>银行要求二次确认，但没收到或超时</td><td>在银行 App 里完成确认，注意别超时</td></tr>
+<tr><td>10</td><td>Card restricted / This card cannot be used</td><td>卡被限制</td><td>预付卡、虚拟卡段被通道划入受限范围</td><td>换卡段或换实体卡，同卡重试无意义</td></tr>
+</tbody>
+</table>
+
+<h2>哪些重试有用，哪些没用</h2>
+<p><strong>重试有用：</strong>1、2（换时段或换 IP 后再试一次）、7、9。这类属于通道或权限问题，条件改了就过。</p>
+<p><strong>重试没用：</strong>3、4、5、6 要先修正信息；8 要先开权限；10 基本只能换卡。至于风险类拒绝——短时间内多次失败已经被记为异常，越刷越难过。</p>
+
+<h2>报错之外还要看的两处</h2>
+<h3>发卡行 App 里有没有一笔「预授权」记录</h3>
+<p>有预授权且被撤销，说明交易到了发卡行、被风控拦下；完全没有记录，说明请求根本没出通道。两种情况的处理方向完全不同。</p>
+<h3>账单地址与卡登记地址是否一致</h3>
+<p>地址校验不通过时，很多通道不给明确理由，只返回一个泛化的拒绝。把省市区、邮编填成与卡登记一致，是零成本的一步。</p>
+
+<h2>常见坑</h2>
+<h3>一小时内连续重试十几次</h3>
+<p>这是把「一次失败」变成「账号被标记」的常见方式。失败三次就停下，隔一两个小时再试，中间去处理权限和信息问题。</p>
+<h3>换卡后仍然用原来的账单地址</h3>
+<p>新卡有自己的登记地址。地址对不上，等于给了一张信息不一致的卡，被拒概率更高。</p>
+<h3>把「需要验证」当成卡被拒</h3>
+<p>3DS 验证是流程没走完，不是拒绝。真正的失败是验证超时或验证被拒，两种情况提示不一样。</p>
+<h3>用同一张卡给多个账号订阅</h3>
+<p>短期内同一张卡连续给多个账号付款，容易触发发卡行风控。要买多个，隔开时间，或者分散到不同的支付方式。</p>
+<h3>忽略「订阅类交易」这个限制</h3>
+<p>有些卡能消费、能转账，就是不能做订阅扣款。这类限制在卡平台的设置里能看到，不看你余额多少。</p>
+
+<div class="risk">
+<h2>主动说清风险</h2>
+<ul>
+<li>报错原文会随支付通道版本变化，本文按 2026-11-06 的常见形态整理，遇到新的报错以页面原文为准，别硬套。</li>
+<li>反复失败不是无害的：短时间高频失败请求会提高账号的风险评分，这是很多人「越试越不行」的真实原因。</li>
+<li>不要把卡号、有效期、安全码通过聊天发给任何人，包括自称客服的人。正规的卡密类交付不需要这些信息。</li>
+<li>价格随店铺调整，本页不写具体售价，以实际下单页为准。</li>
+</ul>
+</div>
+<section>
+<h2>常见问题</h2>
+<h3>被拒之后要等多久才能再试？</h3>
+<p>如果是权限或信息问题（第 1、5、6、8 类），改完就可以试；如果是风控或处理错误（第 2、7 类），建议隔一到两个小时；如果真的撞上风险判定，等一天更稳。不要一小时内连续刷。</p>
+<h3>银行说没扣款，为什么页面说被拒？</h3>
+<p>说明请求到了发卡行但被拦下，或者根本没出通道。看发卡行 App 有没有预授权记录就能区分：有记录是被拦，没记录是没出通道。</p>
+<h3>国内双币卡到底能不能用？</h3>
+<p>有一部分能用，但被拒的比例不低，尤其是新卡和默认关闭境外线上交易的卡。先开权限、核对地址，试一到两次；不行就换通道，别在同一个卡上死磕。</p>
+<h3>虚拟卡被拒是不是这张卡废了？</h3>
+<p>不一定。可能是这个卡段被通道限制，换卡段就可能过；也可能是这张卡没开订阅类交易。同一个卡段反复失败，就换一档。</p>
+<h3>重试太多次会不会影响账号？</h3>
+<p>会提高风险评分，表现是后面更难支付、甚至需要额外验证。这是「越急越办不成」的典型场景，停下等一段时间反而是最优解。</p>
+</section>
+<section class="more">
+<h2>其他指南</h2>
+<ul>
+<li><a href="no-foreign-card.html">没有国外银行卡怎么给 ChatGPT 升级 Plus</a></li>
+<li><a href="chatgpt-plus-guide.html">ChatGPT Plus 国内怎么充值（2026 版）：四条路逐条拆</a></li>
+<li><a href="subscription-dropped.html">ChatGPT Plus 掉订阅怎么办：先做这 5 步</a></li>
+<li><a href="link-selfcheck.html">知乎/V2EX 上那些代充链接能不能点：4 条自检</a></li>
+<li><a href="price-conversion-table.html">2026 ChatGPT 各档价格换算表（含汇率与手续费）</a></li>
+</ul>
+</section>
+</main>
+<footer>
+<p>价格随店铺调整，以实际下单页为准；本页为经验整理，不构成任何承诺。</p>
+<a class="cta" href="https://prodclub.xyz/r/Y5WVQ9?utm_source=pages&utm_medium=guide&utm_campaign=card-declined-errors" rel="nofollow noopener">查看在售与价格</a>
+<p>订阅、支付与退款政策以官方页面和实际下单页为准。</p>
+</footer>
+</div>
+</body>
+</html>

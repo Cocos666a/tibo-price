@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ChatGPT 充值指南目录：12 个问题逐篇拆（2026 版）</title>
+<meta name="description" content="ChatGPT 订阅与充值 12 个具体问题的指南目录：四条充值路线对比、没有境外卡怎么办、Pro 5x/20x/50x 档位怎么选、Codex 额度、刷卡被拒报错、封号风险归因、掉订阅排查、企业开票、接码场景、价格换算、链接自检、与 Claude Pro 对比。">
+<link rel="canonical" href="https://cocos666a.github.io/tibo-price/guides/">
+<style>
+:root{color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:#0E1116;color:#E6E8EB;font-size:17px;line-height:1.75;
+font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif}
+.wrap{max-width:720px;margin:0 auto;padding:22px 18px 48px}
+.crumb{font-size:14px;line-height:1.6;color:#8A929C;margin:0 0 16px}
+.crumb a{color:#8A929C;text-decoration:none;border-bottom:1px solid #262C34}
+.crumb a:hover{color:#FF7A45;border-bottom-color:#FF7A45}
+h1{font-size:25px;line-height:1.45;margin:0 0 16px;color:#FFFFFF;letter-spacing:.2px}
+h2{font-size:19px;line-height:1.5;margin:30px 0 12px;color:#FFFFFF;
+border-left:3px solid #FF7A45;padding-left:10px}
+h3{font-size:17px;line-height:1.6;margin:20px 0 6px;color:#FFC9AE}
+p{margin:0 0 14px}
+ul,ol{margin:0 0 14px;padding-left:22px}
+li{margin:0 0 8px}
+a{color:#FF7A45;text-decoration:none}
+a:hover{text-decoration:underline}
+strong{color:#FFFFFF}
+.lead{background:#171B21;border:1px solid #262C34;border-left:3px solid #FF7A45;
+border-radius:8px;padding:14px 16px;margin:0 0 22px}
+.card{background:#171B21;border:1px solid #262C34;border-radius:8px;padding:14px 16px;margin:0 0 16px}
+.risk{background:#1A1410;border:1px solid #4A2A18;border-radius:8px;padding:2px 16px 14px;margin:26px 0 18px}
+.risk h2{border-left:0;padding-left:0;font-size:18px;margin:20px 0 10px;color:#FFB18F}
+.risk ul{padding-left:20px}
+table{border-collapse:collapse;margin:10px 0 18px;font-size:15px;line-height:1.6}
+th,td{border:1px solid #262C34;padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#171B21;color:#FFFFFF;font-weight:600}
+.more{margin:34px 0 0}
+.more ul{list-style:none;padding:0;margin:0}
+.more li{background:#171B21;border:1px solid #262C34;border-radius:8px;
+padding:10px 14px;margin:0 0 10px;font-size:16px;line-height:1.55}
+.cta{display:block;background:#FF7A45;color:#0E1116;text-align:center;text-decoration:none;
+font-weight:700;padding:14px 18px;border-radius:8px;margin:30px 0 14px}
+.cta:hover{text-decoration:none;opacity:.92}
+footer{font-size:13px;line-height:1.7;color:#8A929C}
+footer p{margin:0 0 8px}
+
+.list li{font-size:16px;line-height:1.6}
+.dl{font-size:14px;color:#8A929C}</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "ChatGPT 充值指南目录：12 个问题逐篇拆（2026 版）", "url": "https://cocos666a.github.io/tibo-price/guides/", "hasPart": [{"@type": "Article", "name": "ChatGPT Plus 国内怎么充值（2026 版）：四条路逐条拆", "url": "https://cocos666a.github.io/tibo-price/guides/chatgpt-plus-guide.html"}, {"@type": "Article", "name": "没有国外银行卡怎么给 ChatGPT 升级 Plus", "url": "https://cocos666a.github.io/tibo-price/guides/no-foreign-card.html"}, {"@type": "Article", "name": "ChatGPT Pro 5x / 20x / 50x 有什么区别，该买哪档", "url": "https://cocos666a.github.io/tibo-price/guides/pro-5x-20x-50x.html"}, {"@type": "Article", "name": "Codex 用 Plus 够不够：额度与限流实测", "url": "https://cocos666a.github.io/tibo-price/guides/codex-plus-quota.html"}, {"@type": "Article", "name": "ChatGPT 充值卡被拒：10 个报错对照表", "url": "https://cocos666a.github.io/tibo-price/guides/card-declined-errors.html"}, {"@type": "Article", "name": "ChatGPT 代充会封号吗：能归因和不能归因的分开说", "url": "https://cocos666a.github.io/tibo-price/guides/ban-risk-explained.html"}, {"@type": "Article", "name": "ChatGPT Plus 掉订阅怎么办：先做这 5 步", "url": "https://cocos666a.github.io/tibo-price/guides/subscription-dropped.html"}, {"@type": "Article", "name": "ChatGPT 企业采购怎么开票、怎么对公", "url": "https://cocos666a.github.io/tibo-price/guides/enterprise-invoice.html"}, {"@type": "Article", "name": "GPT 接码是什么，什么场景才需要", "url": "https://cocos666a.github.io/tibo-price/guides/sms-verification.html"}, {"@type": "Article", "name": "2026 ChatGPT 各档价格换算表（含汇率与手续费）", "url": "https://cocos666a.github.io/tibo-price/guides/price-conversion-table.html"}, {"@type": "Article", "name": "知乎/V2EX 上那些代充链接能不能点：4 条自检", "url": "https://cocos666a.github.io/tibo-price/guides/link-selfcheck.html"}, {"@type": "Article", "name": "ChatGPT Plus 和 Claude Pro 怎么选", "url": "https://cocos666a.github.io/tibo-price/guides/plus-vs-claude-pro.html"}]}</script>
+</head>
+<body>
+<div class="wrap">
+<nav class="crumb"><a href="../index.html">首页</a> › <span>指南</span></nav>
+<main>
+<h1>ChatGPT 充值指南目录：12 个问题逐篇拆（2026 版）</h1>
+<div class="lead"><p>这里把「在国内怎么用上 ChatGPT 付费能力」拆成 12 个具体问题：怎么充、没卡怎么办、Pro 三档怎么选、Codex 额度够不够、卡被拒怎么查、封号风险怎么归因、掉订阅怎么救、企业怎么开票、接码是什么、价格怎么换算、别人给的链接能不能点、和 Claude Pro 怎么比。每篇只回答一个问题，看完能直接动手。</p></div>
+
+<h2>先充值的路，再挑档位</h2>
+<ul>
+<li>还没搞清楚有几条路 → 先看《ChatGPT Plus 国内怎么充值（2026 版）：四条路逐条拆》</li>
+<li>没有境外卡 → 直接看《没有国外银行卡怎么给 ChatGPT 升级 Plus》</li>
+<li>不知道 Plus 还是 Pro → 看《ChatGPT Pro 5x / 20x / 50x 有什么区别，该买哪档》</li>
+<li>主要用 Codex 写代码 → 看《Codex 用 Plus 够不够：额度与限流实测》</li>
+</ul>
+
+<h2>出问题的时候看这几篇</h2>
+<ul>
+<li>付款被拒 → 《ChatGPT 充值卡被拒：10 个报错对照表》</li>
+<li>担心封号 → 《ChatGPT 代充会封号吗：能归因和不能归因的分开说》</li>
+<li>订阅突然掉了 → 《ChatGPT Plus 掉订阅怎么办：先做这 5 步》</li>
+<li>要报销或对公 → 《ChatGPT 企业采购怎么开票、怎么对公》</li>
+</ul>
+
+<h2>决策与判断</h2>
+<ul>
+<li>价格怎么算才合理 → 《2026 ChatGPT 各档价格换算表（含汇率与手续费）》</li>
+<li>别人给的链接能不能点 → 《知乎/V2EX 上那些代充链接能不能点：4 条自检》</li>
+<li>要不要再买 Claude Pro → 《ChatGPT Plus 和 Claude Pro 怎么选》</li>
+<li>接码是干什么的 → 《GPT 接码是什么，什么场景才需要》</li>
+</ul>
+
+<div class="risk">
+<h2>这个目录页先说风险</h2>
+<ul>
+<li>所有页面里的价格只是换算口径示例，实际价格随店铺调整，以实际下单页为准。</li>
+<li>本目录不提供任何「保证不封号」「保证不掉订阅」的承诺；封号原因通常无法归因，这一点在《ChatGPT 代充会封号吗》里写得很直白。</li>
+<li>凡是要求你交出密码 + 短信验证码的交付方式，不管对方说得多好，都先停下来。</li>
+</ul>
+</div>
+
+<section class="more">
+<h2>12 篇指南</h2>
+<ul class="list">
+<li><a href="chatgpt-plus-guide.html">ChatGPT Plus 国内怎么充值（2026 版）：四条路逐条拆</a><br><span class="dl">ChatGPT Plus 官方 20 美元/月，国内没有境外卡怎么充？把四条可行路线（境外卡直订、代充、卡密自助兑换、虚拟卡自建支付）逐条拆开，写清各自成本、账号风险与翻车点，并给出按自身情况的选择顺序。</span></li>
+<li><a href="no-foreign-card.html">没有国外银行卡怎么给 ChatGPT 升级 Plus</a><br><span class="dl">没有国外银行卡，也能给 ChatGPT 升级 Plus：虚拟卡、找人代付、卡密自助兑换、应用商店内购这四条替代路线各自的门槛、费率、通过率与翻车点，附每一步的前置检查清单，以及必须主动规避的账号与支付风险。</span></li>
+<li><a href="pro-5x-20x-50x.html">ChatGPT Pro 5x / 20x / 50x 有什么区别，该买哪档</a><br><span class="dl">ChatGPT Pro 的 5x / 20x / 50x 三档本质是额度倍率档，差的是用量上限而不是模型权限。本文讲清倍率怎么算、按使用强度怎么选、什么时候升档才划算，以及三档最常见的误判与坑，附一个两周自测的记账方法。</span></li>
+<li><a href="codex-plus-quota.html">Codex 用 Plus 够不够：额度与限流实测</a><br><span class="dl">Codex 用 Plus 够不够？本文给出可复现的自测方法：记录撞限流的时间点与任务类型，判断 Plus 档在短改、中等重构、长任务三种场景下的真实余量，并给出「升一档还是改工作流」的判断标准与常见误区。</span></li>
+<li><a href="card-declined-errors.html">ChatGPT 充值卡被拒：10 个报错对照表</a><br><span class="dl">ChatGPT 充值卡被拒别急着重复提交。本文按支付页面常见的 10 个报错原文逐条对照：中文含义、真实原因、该找谁处理，并按「重试有用」和「重试只会加重账号标记」分成两组，另附发卡行侧的三项前置检查与三个高频坑。</span></li>
+<li><a href="ban-risk-explained.html">ChatGPT 代充会封号吗：能归因和不能归因的分开说</a><br><span class="dl">代充会不会封号，先把能归因和不能归因的分开：异地登录、多人共用、支付拒付这些有因果链，平台常规风控与误判没有。讲清代充到底在你的账号上做了什么动作、哪些信号会被记下来，以及怎么把可控的那部分压低，最后给出四条可执行的操作建议。</span></li>
+<li><a href="subscription-dropped.html">ChatGPT Plus 掉订阅怎么办：先做这 5 步</a><br><span class="dl">ChatGPT Plus 掉订阅先别急着重买。按 5 步排查：看订阅状态、查支付是否失败、确认登录的是哪个账号、核对订单类型、再找服务方要凭证，附常见误判、重复扣费风险、续费宽限期处理、售后边界与真假掉订阅的区分方法。</span></li>
+<li><a href="enterprise-invoice.html">ChatGPT 企业采购怎么开票、怎么对公</a><br><span class="dl">公司要买 ChatGPT 怎么走流程：能开什么票、普票和专票差在哪、开票需要提供哪些信息、对公转账怎么走、报销要留哪些凭证、跨境服务的税务注意点，以及付款前必须先问清否则会卡住报销的三个问题与抬头规则。</span></li>
+<li><a href="sms-verification.html">GPT 接码是什么，什么场景才需要</a><br><span class="dl">接码就是用可接收短信的号码代收验证码。本文讲清它的原理、真正需要它的三种场景、其实并不需要它的几种情况、长效号与一次性号的区别，以及号码共享、号码被回收、二次验证丢失这几类风险该怎么评估，附到期前的迁移清单。</span></li>
+<li><a href="price-conversion-table.html">2026 ChatGPT 各档价格换算表（含汇率与手续费）</a><br><span class="dl">ChatGPT 各档价格怎么换算成人民币：给出通用公式、按 2026-11-06 汇率 6.685 的美元兑人民币速查表（含 1% 与 3% 货币转换费）、一个完整算例，以及汇率、手续费、渠道加价怎么影响你最终付的钱。</span></li>
+<li><a href="link-selfcheck.html">知乎/V2EX 上那些代充链接能不能点：4 条自检</a><br><span class="dl">论坛帖里甩出来的代充链接，点之前用 4 条自检过一遍：主体能不能核验、链接能不能归因、支付能不能追回、承诺有没有越界。附一条红线：既要素密码又要验证码的一律停。四个点都能查，比凭感觉判断可靠得多，也说明哪些动作真的危险。</span></li>
+<li><a href="plus-vs-claude-pro.html">ChatGPT Plus 和 Claude Pro 怎么选</a><br><span class="dl">两者都在 20 美元/月这一档，选哪个看工作类型而不是看榜单：日常问答与多模态、长文处理与代码重构、写作风格、生态集成各有侧重。给出按任务类型的选择顺序、同时订两份的代价、四个常见误判，以及什么时候只订一份就够。</span></li>
+</ul>
+</section>
+</main>
+<footer>
+<p>价格随店铺调整，以实际下单页为准；本页为经验整理，不构成任何承诺。</p>
+<a class="cta" href="https://prodclub.xyz/r/Y5WVQ9?utm_source=pages&utm_medium=guide&utm_campaign=guides-index" rel="nofollow noopener">查看在售与价格</a>
+<p>订阅、支付与退款政策以官方页面和实际下单页为准。</p>
+</footer>
+</div>
+</body>
+</html>
