@@ -1,40 +1,45 @@
-# Tibo AI 订阅小店 · 公开价目页
+# Cocos AI订阅源头 · 公开价目页
 
-> 各类 AI 订阅与数字服务，代理直充 / 交付一站式小店。公开价目页：**https://cocos666a.github.io/tibo-price/**
+> AI 订阅代充与数字商品交付。公开价目页：**https://cocos666a.github.io/tibo-price/**
 
 ## 关于我们
 
-**Tibo AI 订阅小店** —— 提供各类 AI 订阅的代理直充 / 数字商品交付服务：
+**Cocos AI订阅源头**（店铺名 AI订阅源头-Cocos）—— 提供 AI 订阅代充与数字商品交付服务：
 
-| 分类 | 服务 | 说明 |
-|---|---|---|
-| ChatGPT 订阅 | Plus / Pro 5x / Pro 20x / Pro 50x | 升级到你自己账号 · 自有账号直充 |
-| 接码服务 | GPT 长效接码（美国） | 有效期 21–30 天 |
+| 分类 | 服务 |
+|---|---|
+| ChatGPT 订阅 | Plus / Codex Plus / Pro 5x / Pro 20x / Pro 500 |
+| Claude 订阅 | 5x Max 代充 |
+| Gemini | Google AI Pro 月卡 / AI Ultra 5x·200 月卡 / 学生认证 |
+| Grok | Plus / Premium 4x / Super 15x / Ultra 50x 月卡 |
+| Codex | 250 额度 / Plus 套餐 / Pro100 / Pro200 / Pro500 |
+| 接码 | codex 单次接马 · 可 API 对接 |
+| 邮箱 | 长效个人谷歌 / 企业谷歌 2FA |
 
 - ✅ 支付宝结算 · 自助下单 · 订单进度可查
-- ✅ 正规渠道 · 质保 · 可开票（具体以商品页说明为准）
+- ✅ 质保以商品页标注为准（常见 30 天）
 - ✅ 价格透明，以店铺实时页为准
 
-## 价格一览（更新日期：2026-11-14）
+## 价格
 
-| 商品名称和规格 | 价格（人民币 CNY） | 在售状态 |
-|---|---|---|
-| ChatGPT Plus（1 个月） | ¥129 / 月 | 在售 |
-| ChatGPT Pro 5x（1 个月） | ¥699 / 月 | 在售 |
-| ChatGPT Pro 20x（1 个月） | ¥1199 / 月 | 在售 |
-| ChatGPT Pro 50x（1 个月） | ¥3399 / 月 | 在售 |
-| GPT 长效接码（美国 · 21–30 天） | ¥19.90 / 份 | 在售 |
+**完整价目表请直接打开价目页：https://cocos666a.github.io/tibo-price/**
 
-> 完整价目表（含每项购买链接）：**https://cocos666a.github.io/tibo-price/** ｜ 价格与在售状态以店铺实时页面为准。
+价目页由脚本每日从店铺实时页面接口拉取，**不是手抄**；此处不再罗列固定价格，避免与店铺实际售价脱节。
+
+> 价格与在售状态以店铺实时页面为准。
 
 ## 店铺与客服
 
-- 🛒 店铺地址：https://prodclub.ai/r/Y5WVQ9
+- 🛒 店铺地址：https://www.16688.com.cn/shop/COCOS
 - 💬 TG 客服：https://t.me/TiboAI_support_bot
 - 📋 公开价目页：https://cocos666a.github.io/tibo-price/
 
 ## 本仓库
 
-托管「Tibo AI 订阅小店」公开价目页（静态 HTML），供公开查询与比价收录核验使用；价格与在售状态以店铺实时页面为准，本页随之更新。
+托管「Cocos AI订阅源头」公开价目页（静态 HTML），供公开查询与比价收录核验使用。
 
-*更新日期：2026-11-14（店铺换域 .xyz → .ai，价格未变）*
+- `gen_price_page.py` — 价目页生成器，价格唯一真源为店铺页面接口 `/shopApi/goods/list` 的 `price` 字段
+- `guides/` — 12 篇充值/避坑指南
+- `index.html` — 生成的价目页（勿手改，重跑脚本覆盖）
+
+*更新日期：2026-11-24（店铺迁至 16688，品牌更名为 Cocos AI订阅源头，价目表改为实时拉取）*
